@@ -22,7 +22,7 @@ export default class beSTAR extends Component {
     return (
         <WebView 
           source={{uri: 'https://www.bestar.kz/'}} 
-          userAgent="beSTAR-App-Android" />
+          userAgent="beSTAR-Android/1.2" />
     );
   }
 }

@@ -8,7 +8,7 @@ This project was bootstrapped with [react-native](https://facebook.github.io/rea
 4. "cd ~/reactjs-avia-app" - переместиться в дерикторию с приложением
 5. 'npm install' - запустить установку необходимых модулей
 6. Разместить в директории /reactjs-avia-app/android/app/ ключ для релиза my-release-key.keystore
-7. Обновить версию приложения в файле /reactjs-avia-app/android/app/build.gradle
+7.1 Обновить версию приложения в файле /reactjs-avia-app/android/app/build.gradle
 ```javascript
 android {
     ...
@@ -18,6 +18,19 @@ android {
         versionCode 2      //Увеличить на 1
         versionName "1.1"  //Увеличить на 0.1
         ...
+    }
+```
+7.2 Обновить версию useragent в файле /reactjs-avia-app/index.android.js
+```javascript
+android {
+    ...
+
+    render() {
+      return (
+        <WebView 
+          source={{uri: 'https://www.bestar.kz/'}} 
+          userAgent="beSTAR-Android/1.2" /> // Увеличить на 0.1
+      );
     }
 ```
 8. "cd android && ./gradlew assembleRelease" - выполнить команду в корневой папке приложения для создания нового релизного билда.
